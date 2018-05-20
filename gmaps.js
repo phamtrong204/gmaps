@@ -17,7 +17,7 @@
  * GMaps.js v0.4.25
  * http://hpneo.github.com/gmaps/
  *
- * Copyright 2017, Gustavo Leon
+ * Copyright 2018, Gustavo Leon
  * Released under the MIT License.
  */
 
@@ -1073,7 +1073,9 @@ GMaps.prototype.drawOverlay = function(options) {
       options.remove.apply(this, [el]);
     }
     else {
-      overlay.el.parentNode.removeChild(overlay.el);
+      if (overlay.el) {
+        overlay.el.parentNode.removeChild(overlay.el);  
+	  }
       overlay.el = null;
     }
   };
